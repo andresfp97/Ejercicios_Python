@@ -1,0 +1,20 @@
+# ENTRADAS
+nombre= (input("Escriba el nombre del conductor: "))
+Placa= (input("Escriba la placa del vehiculo: "))
+valor_pasaje_total= int (input("Introduzca el monto total de psajes: "))
+valor_encomiendas_total = int (input("Introduzca el valor total de encomiendas: "))
+
+# PROCESO
+valor_pagar_pasajes = valor_pasaje_total*0.25
+valor_pagar_encomiendas = valor_encomiendas_total * 0.15
+valor_pagar = valor_pagar_encomiendas +valor_pagar_pasajes
+
+# SALIDA
+print("Nombre: ", nombre)
+print("Placa del vehiculo: ", Placa)
+print(f" Valor total de pasajes recolectado :{valor_pasaje_total:,.0f} " )
+print(f" Valor a pagar al conductor por pasajes es :{valor_pagar_pasajes:,.0f} " )
+print(f" Valor total de  encomiendas recolectado: {valor_encomiendas_total:,.0f}" )
+print(f" Valor a pagar al conductor por encomiendas es : {valor_pagar_encomiendas:,.0f}", )
+print(f" Valor a pagar al conductor en totalidas es : {valor_pagar:,.0f} ", )
+
