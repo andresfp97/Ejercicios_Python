@@ -1,3 +1,5 @@
+ #funcion que separa la fecha de nacimiento y  muestra dia, mes y año 
+ 
 def pedir_fecha_nacimiento():
     # Pedir la fecha de nacimiento
     fecha = input("Introduce tu fecha de nacimiento en formato dd/mm/aaaa: ")

@@ -1,3 +1,6 @@
+# se pide un numero de telefono con un formato especifico se separa el  numero
+# a conveniencia y se imprima solo el numero 
+
 num = input("Ingrese el numero de telefono en formato +34-123456789-56 ")
 # separa la cadena  en un arreglo cuando encuentre "-"
 sep_cadena = num.split("-")
