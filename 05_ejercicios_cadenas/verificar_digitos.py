@@ -1,5 +1,5 @@
- 
 num = input("Ingrese el numero de telefono en formato +34-123456789-56 ")
-
-for i in range(4, len(num)-3):
-        print(num[i], end = "")
+# separa la cadena  en un arreglo cuando encuentre "-"
+sep_cadena = num.split("-")
+# se muestra en consola  la parte [1] del arreglo donde quedo  la palabra separada.
+print(sep_cadena[1])
