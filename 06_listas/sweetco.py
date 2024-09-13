@@ -1,12 +1,30 @@
 
+def diaMayorIng(mat, lst):
+    lsting = []
+    for f in range(len(mat[0])):
+        suma=0
+        for c in range(len(mat)):
+            suma += mat[c][f] * lst[c]
+        lsting.append(suma)
+    mayor = max(lsting)
+    pos = lsting.index(mayor)+1
+    return pos
+
+def DiaSemana(num):
+    dias_semana= ("Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo")
+    if  num > 0 and num <= 7:
+        return (dias_semana[num-1])
+   
+
 def proMayIngSem(mat, lst):
     lsting = []
     for f in range(len(mat)):
-        suma = 0
-        for c in range(len(mat[f])):
-            suma += mat[f][c] * lst[f]
-        lsting.append(suma)
-        # lsting.append(sum(mat[f] * lst [f]))
+    #     suma = 0
+    #     for c in range(len(mat[f])):
+    #         suma += mat[f][c] * lst[f]
+    #     lsting.append(suma)
+
+        lsting.append(sum(mat[f] * lst [f]))
 
     mayor = max(lsting)
     prod = lsting.index(mayor) + 1
@@ -25,4 +43,5 @@ matVtas = [
 ]
 
 prod, ingprod = proMayIngSem(matVtas, lstPrecios)
-print("elproducto que genera ms ingresos en la semana es:",prod, f"- vendio: ${ingprod: ,} ",)
+print("elproducto que genera ms ingresos en la semana es:",prod, f"- vendio: ${ingprod: ,} ")
+print(f"El dia de la semana con mayor ingresos es el: {DiaSemana(int(diaMayorIng(matVtas, lstPrecios)))}")
