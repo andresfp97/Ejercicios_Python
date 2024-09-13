@@ -1,3 +1,4 @@
+from cgi import print_arguments
 from itertools import count
 
 
@@ -35,10 +36,24 @@ print(min(lista))
 print(f"Tamaño de la lista: {len(lista)}")
 
 # sorted  
-# creciente (menor a mayor)
+# oedena creciente (menor a mayor)
 print(sorted(lista))
 
 #decreciente(mayor a menor)
 print(sorted(lista, reverse = True))
 # count 
 print(lista.count(20))
+
+
+lista = [40,30,5,90,20,1,20,50,60,20]
+
+# del
+del(lista[3])
+print(lista)
+
+# limpiar lista
+lista.clear()
+print(lista)
+print(type(lista))
+
+
