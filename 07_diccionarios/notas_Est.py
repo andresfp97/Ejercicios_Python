@@ -12,9 +12,7 @@ detener = 0
 
 print("\nEstudiante")
 cod = input("Codigo? ")
-
 while cod != "999":
-    
     dDatos = {}
     dDatos["nombre"] = input("Nombre? ")
     dDatos["nota1"] = float(input("ingrese la nota1: "))
@@ -28,8 +26,8 @@ while cod != "999":
     dDatos["status"] = aprobar(dDatos["definitiva"])
     estudiantes[cod] = dDatos
     detener = cod
-    
+
     print("\nEstudiante")
     cod = input("Codigo? ")
-    
+
 print(estudiantes)
