@@ -1,6 +1,3 @@
-from cgi import print_arguments
-from itertools import count
-
 
 lista = [10,20,"Juan", 30, "Sergio"]
 lista.append(40) # añade al final el 40
