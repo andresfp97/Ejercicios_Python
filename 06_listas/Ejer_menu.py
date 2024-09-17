@@ -1,5 +1,5 @@
 def menu():
-    print(">>> MENU <<<")
+    print(">>> MENU <<< " )
     print("1. Ver calificación más alta")
     print("2. Ver calificación más baja")
     print("3. Ordenar calificaciones de menor a mayor")
@@ -7,7 +7,9 @@ def menu():
     print("5. Mostrar promedio de calificaciones")
     print("6. Mostrar número total de estudiantes")
     print("7. Salir")
-    print("SELECCIONE LA RESPUESTA QUE DESEA")
+    print()
+    num = int(input(">>> SELECCIONE LA RESPUESTA QUE DESEA: "))
+    return num
 
 
 def calAlta(lst):
@@ -20,13 +22,12 @@ def calBaja(lst):
     return menor
 
 
-def ordMayMenor(lst):
-    lst = sorted(lst)
-    return lst
+def ordMenorMay(lst):
+      return sorted(lst)
 
 
 def elimiCal(lst, pos):
-    del lst[pos]
+    del lst[pos-1]
     return lst
 
 
@@ -40,27 +41,53 @@ def totEst(lst):
     cant = len(lst)
     return cant
 
+def esperar_tecla_para_continuar():
+    input("Presiona Enter para continuar...")
+    print("\n" * 30)
+
 
 cal = [4.5, 3, 3.8, 4.2, 3.3]
 
 
-def elegirProceso(num):
+while True:
+    num = menu()
     match num:
         case 1:
             mayor = calAlta(cal)
             print(f"la calificacion mas alta es: {mayor}")
+            print("="*40)
+            esperar_tecla_para_continuar()
         case 2:
             menor = calBaja(cal)
-            print(f"la calificacion mas alta es: {menor}")
+            print(f"la calificacion mas baja es: {menor}")
+            print("="*40)
+            esperar_tecla_para_continuar()
         case 3:
-            ordMayMenor(cal)
-            print (f"La lista ordenada es: {cal}")
+            ordenada = ordMenorMay(cal)
+            print (f"La lista ordenada es: {ordenada}")
+            print("="*40)
+            esperar_tecla_para_continuar()
         case 4:
-            pos = int(input("ingrese la pocision a eliminar")) 
-            elimiCal(cal,pos)
-            print (f"La lista con el valor eliminado es: {cal}")
+            print(cal)
+            pos = int(input("ingrese la pocision a eliminar: ")) 
+            print(elimiCal(cal, pos))
+            print("="*40)
+            esperar_tecla_para_continuar()
         case 5:
             promedio = promCal(cal)
-            print(f"la calificacion mas alta es: {promedio}")
+            print(f"El promedio de calificaciones es : {promedio}")
+            print("="*40)
+            esperar_tecla_para_continuar()
+        case 6:
+            total = totEst(cal)
+            print(f"El total de estudiantes es 8: {total}")
+            print("="*40)
+            esperar_tecla_para_continuar()
+        case 7:
+            print(">>> Eso fue todo :) hasta luego <<<")
+            print("="*40)
+            break
         case _:
-            return "Número no reconocido"
+            print("Número no reconocido intenta de nuevo")
+
+
