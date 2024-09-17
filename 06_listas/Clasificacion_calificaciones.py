@@ -1,5 +1,5 @@
 def menu():
-    print(">>> MENU <<<") 
+    print(">>> MENU <<<")
     print("1. Ver calificación más alta")
     print("2. Ver calificación más baja")
     print("3. Ordenar calificaciones de menor a mayor")
@@ -7,31 +7,35 @@ def menu():
     print("5. Mostrar promedio de calificaciones")
     print("6. Mostrar número total de estudiantes")
     print("7. Salir")
-    print(">>> SELECCIONE LA OPCION DE SU PREFERENCIA <<<") 
-    
+    print(">>> SELECCIONE LA OPCION DE SU PREFERENCIA <<<")
+
+
 def calAlta(lst):
     return max(lst)
+
 
 def calBaja(lst):
     return min(lst)
 
+
 def ordMenorMayor(lst):
-    return sorted(lst, reverse= True)
+    return sorted(lst, reverse=True)
+
 
 def elimCalIncorr(lst, pos):
-    del (lst[pos])
+    del lst[pos]
     return lst
-    
-        
-    
-cal= [ 4,5,7,9,5]
+
+
+def promedio(lst):
+    promedio = 0
+    if not lst:
+        return 0
+    suma = sum(lst)
+    promedio = suma / len(lst)
+    return promedio
+
+
+cal = [4, 5, 7, 9, 5]
 
 print(elimCalIncorr(cal, 3))
-
-
-
-
-
-
-
-

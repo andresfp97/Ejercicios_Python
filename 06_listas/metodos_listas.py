@@ -41,7 +41,6 @@ print(sorted(lista, reverse = True))
 # count 
 print(lista.count(20))
 
-
 lista = [40,30,5,90,20,1,20,50,60,20]
 
 # del
