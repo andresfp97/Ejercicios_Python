@@ -1,5 +1,7 @@
+Productos = {}
+
 def ingProducto(num):
-    Productos = {}
+    
     for i in range(num):
         print("Nuevo Producto")
         idProduct = input("Id? ")
@@ -10,17 +12,33 @@ def ingProducto(num):
 
         lisDes =[]
         canDes = int(input("Cantidad de descuentos :"))
+
         for d in range(1,canDes+1):
             descuento = float(input(f"ingrese el descuento numero {d}: "))
             lisDes.append(descuento)
 
         dDatos["Descuento"] = lisDes
-        
         Productos[idProduct] = dDatos
             
 
-    print(Productos)
+    return (Productos)
+        
+def busProducto(codigo):
+
+    if codigo in Productos:
+        return Productos[codigo]
+    else:
+        return "Producto no encontrado."
 
 
-num = int(input("ingrese la cantida de productos a registrar"))
-ingProducto(num)
+num = int(input("ingrese la cantida de productos a registrar: "))
+print(ingProducto(num))
+
+codigo = (input("ingrese el codigo a buscar"))
+print(busProducto(codigo))
+
+
+
+
+
+
