@@ -1,0 +1,10 @@
+{
+    "123": {
+        "Nombre": "llaves",
+        "Precio": 5000.0,
+        "Cantidad": 80,
+        "Descuento": [
+            50.0
+        ]
+    }
+}

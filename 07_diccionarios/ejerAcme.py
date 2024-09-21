@@ -1,91 +1,44 @@
-import json
-import os
+Productos = {}
 
-
-def leerCodigo():
-    while True:
-        try:
-            cod = input("Id del producto? ")
-            if len(cod.strip()) == 0:
-                print(">>> ERROR. Id invalido")
-                continue
-            return cod
-
-        except Exception as e:
-            print("Error al ingresar el codigo.\n", e)
-
-
-def guardarDicJson(proAcme):
-    ruta = "07_diccionarios/productosAcme.json"
-    if os.path.exists(ruta) and os.path.getsize(ruta) > 0:
-        with open(ruta, "r") as fd:
-            try:
-                data = json.load(fd)
-            except json.JSONDecodeError:
-                data = {}
-    else:
-        data = {}
-    data.update(proAcme)
-    with open(ruta, "w") as fd:
-        json.dump(data, fd, indent=4)
-
-
-def inserProd(proAcme):
+def ingProducto(num):
     
-    ruta = "07_diccionarios/productosAcme.json"
+    for i in range(num):
+        print("Nuevo Producto")
+        idProduct = input("Id? ")
+        dDatos = {}
+        dDatos["Nombre"] = input("Nombre? ")
+        dDatos["Precio"] = float(input("ingrese el precio: "))
+        dDatos["Cantidad"] = int(input("ingrese la Cantida: "))
 
-    if os.path.exists(ruta) and os.path.getsize(ruta) > 0:
-        with open(ruta, "r") as fd:
-            try:
-                productosExistentes = json.load(fd)  
-            except json.JSONDecodeError:
-                productosExistentes = {} 
-    else:
-        productosExistentes = {}  
+        lisDes =[]
+        canDes = int(input("Cantidad de descuentos :"))
 
-    
-    proAcme.update(productosExistentes)
-    
-    nuevoProd = True
-    while nuevoProd:
-        print(">>> Nuevo Producto <<<")
-        idProduct = leerCodigo()
-        if idProduct not in proAcme:
-            dDatos = {}
-            dDatos["Nombre"] = input("Nombre? ")
-            dDatos["Precio"] = float(input("ingrese el precio: "))
-            dDatos["Cantidad"] = int(input("ingrese la Cantida: "))
-            lisDes = []
-            otroDes = True
-            while otroDes:
-                descuento = float(input("ingrese el descuento: "))
-                lisDes.append(descuento)
-                preguntaD = input("Quieres ingresar otro descuento? (y) =si  (n) = no ")
-                if preguntaD == "y":
-                    otroDes = True
-                elif preguntaD == "n":
-                    otroDes = False
-            dDatos["Descuento"] = lisDes
-            proAcme[idProduct] = dDatos
-            preguntaP = input("Quieres ingresar otro producto? (y) =si  (n) = no ")
-            if preguntaP == "y":
-                nuevoProd = True
-            elif preguntaP == "n":
-                nuevoProd = False
-        else:
-            print("El codigo ya existe en la libreria.")
+        for d in range(1,canDes+1):
+            descuento = float(input(f"ingrese el descuento numero {d}: "))
+            lisDes.append(descuento)
 
-    return proAcme
+        dDatos["Descuento"] = lisDes
+        Productos[idProduct] = dDatos
+            
 
+    return (Productos)
+        
+def busProducto(codigo):
 
-def busProducto(proAcme):
-    codigo = input("codigo a buscar? ")
-    if codigo in proAcme:
-        return proAcme[codigo]
+    if codigo in Productos:
+        return Productos[codigo]
     else:
         return "Producto no encontrado."
 
 
-productosAcme = {}
-print(inserProd(productosAcme))
-guardarDicJson(productosAcme)
+num = int(input("ingrese la cantida de productos a registrar: "))
+print(ingProducto(num))
+
+codigo = (input("ingrese el codigo a buscar"))
+print(busProducto(codigo))
+
+
+
+
+
+
