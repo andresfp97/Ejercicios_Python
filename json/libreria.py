@@ -1,13 +1,14 @@
 import json
-import pprint
+
 
 def guardar(lib):
-    with open("json/libreria.json","w") as fd:
+    with open("json/libreria.json", "w") as fd:
         json.dump(lib, fd)
 
         if not fd.close:
             fd.close()
-    
+
+
 def leerPrecio():
     while True:
         try:

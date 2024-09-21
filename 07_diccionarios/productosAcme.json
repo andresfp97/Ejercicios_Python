@@ -1,0 +1,20 @@
+{
+    "1": {
+        "Nombre": "gasolina",
+        "Precio": 15040.0,
+        "Cantidad": 50,
+        "Descuento": [
+            10.0,
+            20.0,
+            30.0
+        ]
+    },
+    "2": {
+        "Nombre": "reloj",
+        "Precio": 60000.0,
+        "Cantidad": 45000,
+        "Descuento": [
+            25.0
+        ]
+    }
+}
